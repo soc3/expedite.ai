@@ -2,11 +2,17 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
 
-from helpdesk.views import get_issues
+from helpdesk.views import get_issues_by_category, get_issues_by_status
+from helpdesk.views import archive_issue, resolve_issue, reopen_issue, get_chat
 
 
 urlpatterns = [
-    url(r'^issues/', get_issues)
+    url(r'^issues/category/', get_issues_by_category),
+    url(r'^issues/status/', get_issues_by_status),
+    url(r'^issues/archive', archive_issue),
+    url(r'^issues/resolve', resolve_issue),
+    url(r'^issues/reopen', reopen_issue),
+    url(r'^chat/get', get_chat),
 ]
 
 if settings.DEBUG:

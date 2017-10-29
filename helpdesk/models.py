@@ -7,7 +7,7 @@ from django.db import models
 ISSUE_STATUSES = {
     'open': 1,
     'closed': 2,
-    'spam': 3
+    'archived': 3
 }
 
 ISSUE_CATEGORIES = {
@@ -17,7 +17,7 @@ ISSUE_CATEGORIES = {
     "change or cancel order": 4,
     "payment issues": 5,
     "seller issues": 6,
-    "deliveryissues": 7,
+    "delivery issues": 7,
     "promotions and deals": 8,
     "more order issues": 9
 }
@@ -62,6 +62,9 @@ class Issue(models.Model):
             'priority': self.priority
         }
 
+    def __str__(self):
+        return self.comment_id
+
 
 class Reply(models.Model):
     '''Replies to an issue
@@ -81,3 +84,6 @@ class Reply(models.Model):
             'from_name': self.from_name,
             'from_id': self.from_id
         }
+
+    def __str__(self):
+        return self.comment_id
