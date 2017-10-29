@@ -89,6 +89,8 @@ body {
         justify-content: space-between; }
         .page .sidebar div a .sidebar-item .count {
           color: #878787; }
+      .page .sidebar div a:hover {
+        color: #20BB87; }
   .page .tickets {
     margin-left: 40px;
     margin-top: 40px;
@@ -97,6 +99,13 @@ body {
     font-size: 16px;
     color: #303030;
     line-height: 24px; }
+    .page .tickets .open {
+      border: 1px solid #20BB87 !important; }
+      .page .tickets .open .name {
+        font-family: 'Gotham Bold';
+        color: #20BB87; }
+      .page .tickets .open .issue, .page .tickets .open .chatbox .reply, .page .chatbox .tickets .open .reply {
+        color: #303030 !important; }
     .page .tickets .ind {
       padding: 24px;
       background: #FFFFFF;
@@ -104,9 +113,83 @@ body {
       .page .tickets .ind .name {
         text-transform: uppercase;
         letter-spacing: 1px; }
-      .page .tickets .ind .issue {
+      .page .tickets .ind .issue, .page .tickets .ind .chatbox .reply, .page .chatbox .tickets .ind .reply {
         margin-top: 8px;
         line-height: 24px;
         color: rgba(48, 48, 48, 0.5); }
+  .page .chatbox {
+    width: 25%;
+    height: 100%;
+    margin-left: 32px;
+    margin-top: 40px;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 8px 0 rgba(225, 225, 225, 0.5);
+    border-radius: 5px; }
+    .page .chatbox .titlebox {
+      padding: 8px 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #20BB87; }
+      .page .chatbox .titlebox h1 {
+        font-family: 'Gotham Book';
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #20BB87;
+        letter-spacing: 0.11px; }
+      .page .chatbox .titlebox button {
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 8px 12px;
+        font-family: 'Gotham Book';
+        font-size: 8px;
+        color: #B2B2B2;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.25s;
+        transition-property: all;
+        letter-spacing: 0.4px; }
+        .page .chatbox .titlebox button:hover {
+          color: #7f7f7f; }
+    .page .chatbox .issue, .page .chatbox .reply {
+      font-family: 'Gotham Book';
+      font-size: 13px;
+      color: #717171;
+      padding: 12px;
+      letter-spacing: 0.09px;
+      line-height: 24px;
+      margin: 16px;
+      background: rgba(239, 239, 239, 0.5);
+      border-radius: 2px;
+      width: 50%; }
+    .page .chatbox .reply {
+      background-color: #20BB87;
+      color: white;
+      float: right; }
+    .page .chatbox .send input[type="text"] {
+      margin: 16px;
+      height: 24x;
+      padding: 8px;
+      font-family: 'Gotham Book';
+      font-size: 13px;
+      color: #717171;
+      background: #FFFFFF;
+      width: 65%;
+      border: 1px solid #EEEEEE;
+      box-shadow: 2px 2px 4px 0 rgba(238, 238, 238, 0.5); }
+      .page .chatbox .send input[type="text"]:focus {
+        outline: none; }
+    .page .chatbox .send button {
+      vertical-align: middle;
+      background: transparent;
+      cursor: pointer; }
+      .page .chatbox .send button img {
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.25s;
+        transition-property: all;
+        height: 40px; }
+        .page .chatbox .send button img:hover {
+          transform: scale(1.1); }
 
 /*# sourceMappingURL=style.css.map */

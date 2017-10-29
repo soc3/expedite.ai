@@ -110,6 +110,9 @@ body {
                         color: #878787;
                     }
                 }
+                &:hover {
+                    color: $brand;
+                }
             }
         }
     }
@@ -121,6 +124,16 @@ body {
         font-size: 16px;
         color: #303030;
         line-height: 24px;
+        .open {
+            border: 1px solid $brand!important;
+            .name {
+                font-family: 'Gotham Bold';
+                color: $brand;
+            }
+            .issue{
+                color: #303030!important;
+            }
+        }
         .ind {
             .name {
                 text-transform: uppercase;
@@ -134,6 +147,91 @@ body {
             padding: 24px;
             background: #FFFFFF;
             border: 1px solid #EDEDED;
+        }
+    }
+    .chatbox {
+        width: 25%;
+        height: 100%;
+        margin-left: 32px;
+        margin-top: 40px;
+        background: #FFFFFF;
+        box-shadow: 3px 3px 8px 0 rgba(225, 225, 225, 0.50);
+        border-radius: 5px;
+        .titlebox {
+            padding: 8px 16px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid $brand;
+            h1 {
+                font-family: 'Gotham Book';
+                text-transform: uppercase;
+                font-size: 16px;
+                color: #20BB87;
+                letter-spacing: 0.11px;
+            }
+            button {
+                text-transform: uppercase;
+                cursor: pointer;
+                background-color: transparent;
+                padding: 8px 12px;
+                font-family: 'Gotham Book';
+                font-size: 8px;
+                color: #B2B2B2;
+                @include animation;
+                letter-spacing: 0.4px;
+                &:hover {
+                    color: darken(#b2b2b2, 20%);
+                }
+            }
+        }
+        .issue {
+            font-family: 'Gotham Book';
+            font-size: 13px;
+            color: #717171;
+            padding: 12px;
+            letter-spacing: 0.09px;
+            line-height: 24px;
+            margin: 16px;
+            background: rgba(239, 239, 239, 0.50);
+            border-radius: 2px;
+            width: 50%;
+        }
+        .reply {
+            @extend .issue;
+            background-color: $brand;
+            color: white;
+            float: right;
+        }
+        .send {
+            input[type="text"] {
+                margin: 16px;
+                height: 24x;
+                padding: 8px;
+                font-family: 'Gotham Book';
+                font-size: 13px;
+                color: #717171;
+                background: #FFFFFF;
+                width: 65%;
+                border: 1px solid #EEEEEE;
+                box-shadow: 2px 2px 4px 0 rgba(238, 238, 238, 0.50);
+                &:focus {
+                    outline: none;
+                }
+            }
+            button {
+                vertical-align: middle;
+                background: transparent;
+                cursor: pointer;
+                img {
+                    @include animation;
+                    height: 40px;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
         }
     }
 }
