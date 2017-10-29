@@ -1,4 +1,4 @@
-# Expedite.ai
+# ![expedite.ai](https://raw.githubusercontent.com/himanshub16/expedite.ai/master/static/logo.png?token=ASVjelIHi8KEaa74gruLuD7jUTcBaDMNks5Z_rvxwA%3D%3D)
 #### Bridging the gap between social media and customer support
 
 ## Problem
