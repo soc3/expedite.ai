@@ -26,6 +26,7 @@ def live_api_callback(request):
         print('recieved webhook from facebook')
         newobj = sanitize(data)
         print(newobj)
+
         if newobj['issue']:
             print('new object')
             i, _ = Issue.objects.get_or_create(comment_id=newobj['comment'])

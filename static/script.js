@@ -9,7 +9,7 @@ function attach_issue_to_chat() {
         $('.chatbox .chat-msg-container').text('');
         $('.chatbox .chat-name').text(name);
         $('.chatbox').css({'display': 'block'});
-        document.forms[0].comment_id.value = '';
+        document.forms[0].message.value = '';
 
         $.ajax({
             url: '/helpdesk/chat/get/',
@@ -47,7 +47,7 @@ function handle_chat_submit() {
             },
             success: (data) => {
                 console.log(data);
-                document.forms[0].comment_id.value = '';
+                document.forms[0].message.value = '';
             }
         });
     });
