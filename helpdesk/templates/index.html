@@ -70,21 +70,24 @@
             </div>
 
 
+            <style>
+             .chatbox { display: none; }
+            </style>
+
+
             <div class="chatbox">
                 <div class="titlebox">
                     <h1 class="chat-name">Sarthak Pattanayak</h1>
                     <button>Mark as spam</button>
                 </div>
                 <div class="chat-msg-container">
-                    <div class="issue">I bought a Lenovo gaming headphones this summer. Order id: OD109205149477701000. Now the right side speakers dont work anymore....I would like to apply for warranty(the item is well within the warranty period).
-                    </div>
-                    <div class="reply">We’ll look into the issue. Have a nice day!
-                </div>
                 </div>
                 <form id="chat-form" class="send">
-                    <input type="text" name="message">
+                    <input type="text" name="message" autocomplete="off">
+                    <input name="comment_id" type="text" value="" hidden/>
                     <button type="submit"><img src="/static/input-btn.png"></button>
                 </form>
+                </div>
             </div>
         </div>
     </div>

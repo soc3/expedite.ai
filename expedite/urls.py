@@ -16,7 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from django.shortcuts import render
+
+from expedite.views import index, http_404
+
+
 urlpatterns = [
+    url(r'^$', index),
+    url(r'^404/', http_404),
     url(r'^admin/', admin.site.urls),
     url(r'^helpdesk/', include('helpdesk.urls')),
     url(r'^facebook/', include('facebook.urls'))

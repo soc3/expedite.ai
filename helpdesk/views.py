@@ -88,7 +88,7 @@ def reopen_issue(request):
 def get_chat(request):
     try:
         replies = Reply.objects.filter(issue__comment_id=request.GET['q'])
-        issue = Issue.objects.get()
+        issue = Issue.objects.get(comment_id=request.GET['q'])
         messages = [each.to_json() for each in replies]
         messages.insert(0, issue.to_json())
     except KeyError:

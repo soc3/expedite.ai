@@ -40,14 +40,14 @@ class Issue(models.Model):
     )
 
     comment_id = models.CharField(max_length=50, primary_key=True)
-    status = models.IntegerField(choices=ISSUE_STATUS)
-    message = models.CharField(max_length=500)
-    category = models.CharField(max_length=500)
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    status = models.IntegerField(choices=ISSUE_STATUS, null=True)
+    message = models.CharField(max_length=500, null=True)
+    category = models.CharField(max_length=500, null=True)
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
     from_name = models.CharField(max_length=50)
     from_id = models.CharField(max_length=50)
-    priority = models.IntegerField()
+    priority = models.IntegerField(null=True)
 
 
     def to_json(self):
@@ -72,17 +72,16 @@ class Reply(models.Model):
     comment_id = models.CharField(max_length=50, primary_key=True)
     issue = models.ForeignKey(Issue)
     message = models.CharField(max_length=500)
-    created_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now=True)
     from_name = models.CharField(max_length=50)
-    from_id = models.CharField(max_length=50)
 
     def to_json(self):
         return {
             'comment_id': self.comment_id,
+            'issue_id': self.issue.comment_id,
             'message': self.message,
             'created_at': self.created_at,
             'from_name': self.from_name,
-            'from_id': self.from_id
         }
 
     def __str__(self):
