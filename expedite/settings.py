@@ -25,13 +25,17 @@ SECRET_KEY = '&d5!xlf3bjo6f=++%%jh$ss5+u%afa%bgrbgabob!u7a3i1li-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '420a39e7.ngrok.io',
+    'localhost'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'helpdesk.apps.HelpdeskConfig',
+    'facebook.apps.FacebookConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
