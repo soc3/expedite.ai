@@ -11,6 +11,15 @@ function attach_issue_to_chat() {
         $('.chatbox').css({'display': 'block'});
         document.forms[0].message.value = '';
 
+        $('.ind').removeClass('open');
+        console.log(e.target);
+        $(e.target).closest('ind').addClass('open');
+        console.log($(e.target).closest('ind'));
+        $(e.target.parentElement.parentElement).addClass('open');
+        $('.ind .material-icons').hide();
+
+        $(e.target.parentElement.parentElement).find('.material-icons').show();
+
         $.ajax({
             url: '/helpdesk/chat/get/',
             data: {q: comment_id},
@@ -22,6 +31,7 @@ function attach_issue_to_chat() {
                     let newhtml = '<div class="' + classname + '">' + data[i].message + '</div>';
                     $('.chat-msg-container').append(newhtml);
 
+                    $('.chat-msg-container').scrollTop($('.chat-msg-container')[0].scrollHeight);
                 }
 
             }
@@ -57,4 +67,5 @@ function handle_chat_submit() {
 $(document).ready(() => {
     attach_issue_to_chat();
     handle_chat_submit();
+    $('.ind .material-icons').hide();
 });
