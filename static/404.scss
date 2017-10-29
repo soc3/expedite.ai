@@ -1,3 +1,4 @@
+@import 'reset.css';
 @font-face {
     font-family: 'Gotham Bold';
     src: url('fonts/Gotham Rounded Bold.eot');
@@ -5,6 +6,13 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@mixin animation {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.25s;
+    transition-property: all;
+}
+
 
 @font-face {
     font-family: 'Gotham Book';
@@ -28,7 +36,7 @@
         color: #20BB87;
         letter-spacing: 0.16px;
     }
-    div { 
+    div {
         a {
             text-decoration: none;
             font-family: 'Gotham Book';
@@ -42,3 +50,70 @@
         }
     }
 }
+
+.home {
+    background-image: linear-gradient(34deg, #11998E 0%, #38EF7D 100%);
+}
+
+.main {
+    text-align: center;
+    img {
+        margin-top: 60px;
+        height: 90px;
+        width: 84px;
+    }
+    h1 {
+        margin-top: 48px;
+        font-family: 'Gotham Bold';
+        text-transform: uppercase;
+        font-size: 24px;
+        color: #FFFFFF;
+        letter-spacing: 1px;
+        line-height: 36px;
+        margin-bottom: 72px;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+        .text {
+            .bold{
+                font-family: 'Gotham Bold';
+            }
+            div {
+                font-family: 'Gotham Book';
+                font-size: 16px;
+                color: #FFFFFF;
+                letter-spacing: 0.3px;
+                line-height: 28px;
+                text-align: left;
+                margin-left: 32px;
+            }
+            button {
+                cursor: pointer;
+                margin-top: 24px;
+                float: left;
+                margin-left: 32px;
+                text-transform: uppercase;
+                padding: 16px;
+                background-color: transparent;
+                border: 2px solid white;
+                font-family: 'Gotham Bold';
+                font-size: 24px;
+                color: #FFFFFF;
+                letter-spacing: 1px;
+                @include animation;
+                &:hover{
+                    background-color: #fff;
+                    color: #20BB87;
+                }
+            }
+        }
+        img {
+            margin-top: 0!important;
+            width: 55%;
+            height: 100%;
+            float: right;
+        }
+    }
+}
+    
