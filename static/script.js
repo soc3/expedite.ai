@@ -37,6 +37,30 @@ function attach_issue_to_chat() {
             }
         });
     });
+
+    $('.ind .material-icons').click(function(e) {
+        console.log(e.target);
+        let comment_id = e.target.parentElement.parentElement.parentElement.getElementsByClassName('ind-id')[0].innerText;
+        console.log(comment_id);
+        let url = '';
+        let node = e.target.parentElement.parentElement.parentElement;
+
+        if ($(e.target).hasClass('done')) {
+            url = '/helpdesk/issues/resolve';
+        } else {
+            url = '/helpdesk/issues/archive';
+        }
+
+        $.ajax({
+            method: 'GET',
+            url: url,
+            data: {id: comment_id},
+            success: function(data){
+                console.log(data);
+                node.style.display = 'none';
+            }
+        });
+    });
 }
 
 

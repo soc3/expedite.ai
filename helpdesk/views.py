@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 
 
 from helpdesk.models import Issue, Reply, Order, ISSUE_STATUSES, ISSUE_CATEGORIES
+from facebook.utils import comment
 # Create your views here.
 
 
@@ -55,6 +56,7 @@ def resolve_issue(request):
         issue = Issue.objects.get(comment_id=comment_id)
         issue.status = ISSUE_STATUSES['closed']
         issue.save()
+        print(comment('Your issue has been resolved. Happy to help!', comment_id))
     except KeyError:
         return JsonResponse({'message': 'comment id not provided'}, status=400)
     else:
