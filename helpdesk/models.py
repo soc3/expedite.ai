@@ -27,9 +27,9 @@ class Order(models.Model):
     '''An order made on the portal
     '''
     order_id = models.CharField(primary_key=True, max_length=20)
-    item_name = models.CharField(null=False, blank=False)
+    item_name = models.CharField(null=False, blank=False, max_length=50)
     amount = models.FloatField(null=False, blank=False)
-    buyer = models.CharField(null=False, blank=False)
+    buyer = models.CharField(null=False, blank=False, max_length=50)
 
 
 class Issue(models.Model):
@@ -45,8 +45,8 @@ class Issue(models.Model):
     category = models.CharField(max_length=500)
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
-    from_name = models.CharField()
-    from_id = models.CharField()
+    from_name = models.CharField(max_length=50)
+    from_id = models.CharField(max_length=50)
     priority = models.IntegerField()
 
 
@@ -70,8 +70,8 @@ class Reply(models.Model):
     issue = models.ForeignKey(Issue)
     message = models.CharField(max_length=500)
     created_at = models.DateTimeField()
-    from_name = models.CharField()
-    from_id = models.CharField()
+    from_name = models.CharField(max_length=50)
+    from_id = models.CharField(max_length=50)
 
     def to_json(self):
         return {
