@@ -31,7 +31,7 @@ def get_issues_by_category(request):
     except KeyError:
         q = 'where is my order'
 
-    issues = Issue.objects.filter(category=q)
+    issues = Issue.objects.filter(category=q).order_by('created_at')
     context = get_default_context(request)
     context['issues'] = issues
     return render(request, 'index.html', context)
@@ -43,7 +43,7 @@ def get_issues_by_status(request):
     except KeyError:
         q = 1
 
-    issues = Issue.objects.filter(status=q)
+    issues = Issue.objects.filter(status=q).order_by('created_at')
     context = get_default_context(request)
     context['issues'] = issues
     return render(request, 'index.html', context)
