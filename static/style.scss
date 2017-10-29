@@ -130,7 +130,7 @@ body {
                 font-family: 'Gotham Bold';
                 color: $brand;
             }
-            .issue{
+            .issue {
                 color: #303030!important;
             }
         }
@@ -138,6 +138,30 @@ body {
             .name {
                 text-transform: uppercase;
                 letter-spacing: 1px;
+                span {
+                    float: right;
+                    .done {
+                        @include animation;
+                        margin-right: 24px;
+                        font-size: 30px;
+                        vertical-align: middle;
+                        color: rgba(0,0,0,0.3);
+                        cursor: pointer;
+                        &:hover {
+                            color: $brand;
+                        }
+                    }
+                    .close {
+                        @include animation;
+                        font-size: 30px;
+                        vertical-align: middle;
+                        color: rgba(0,0,0,0.3);
+                        cursor: pointer;
+                        &:hover {
+                            color: #FF3D3D;
+                        }
+                    }
+                }
             }
             .issue {
                 margin-top: 8px;

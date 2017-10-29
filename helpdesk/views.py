@@ -7,6 +7,7 @@ from helpdesk.models import Issue, Reply, Order, ISSUE_STATUSES
 
 
 def get_issues_by_category(request):
+    return render(request, 'index.html')
     try:
         issues = Issue.objects.filter(category=request.GET['q'])
     except KeyError:

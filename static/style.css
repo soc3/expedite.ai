@@ -16,10 +16,6 @@ body {
   background-color: #FCFCFD; }
 
 .nav {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  width: 100%;
   background: #FFFFFF;
   border: 1px solid #DEE6E3; }
   .nav img {
@@ -53,7 +49,6 @@ body {
     border-bottom: 4px solid #20BB87; }
 
 .page {
-  margin-top: 70px;
   display: flex;
   flex-direction: row; }
   .page .sidebar {
@@ -118,13 +113,34 @@ body {
       .page .tickets .ind .name {
         text-transform: uppercase;
         letter-spacing: 1px; }
+        .page .tickets .ind .name span {
+          float: right; }
+          .page .tickets .ind .name span .done {
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.25s;
+            transition-property: all;
+            margin-right: 24px;
+            font-size: 30px;
+            vertical-align: middle;
+            color: rgba(0, 0, 0, 0.3);
+            cursor: pointer; }
+            .page .tickets .ind .name span .done:hover {
+              color: #20BB87; }
+          .page .tickets .ind .name span .close {
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.25s;
+            transition-property: all;
+            font-size: 30px;
+            vertical-align: middle;
+            color: rgba(0, 0, 0, 0.3);
+            cursor: pointer; }
+            .page .tickets .ind .name span .close:hover {
+              color: #FF3D3D; }
       .page .tickets .ind .issue, .page .tickets .ind .chatbox .reply, .page .chatbox .tickets .ind .reply {
         margin-top: 8px;
         line-height: 24px;
         color: rgba(48, 48, 48, 0.5); }
   .page .chatbox {
-    position: fixed;
-    right: 20px;
     width: 25%;
     height: 100%;
     margin-left: 32px;
