@@ -67,5 +67,5 @@ function handle_chat_submit() {
 $(document).ready(() => {
     attach_issue_to_chat();
     handle_chat_submit();
-    $('.ind .material-icons').hide();
+    
 });
