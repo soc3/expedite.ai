@@ -43,7 +43,7 @@ body {
             padding: 30px;
             float: left;
             font-family: 'Gotham Book';
-            font-size: 16px;
+            font-size: 1em;
             color: rgba(0, 0, 0, 0.30);
             letter-spacing: 0.3px;
             margin-left: 8vw;
@@ -71,7 +71,7 @@ body {
         .title {
             text-transform: uppercase;
             font-family: 'Gotham Book';
-            font-size: 16px;
+            font-size: 1em;
             color: $brand;
             padding-left: 24px;
             padding-top: 24px;
@@ -99,7 +99,7 @@ body {
                 min-width: 100%;
                 padding: 24px 24px 24px 24px;
                 font-family: 'Gotham Book';
-                font-size: 16px;
+                font-size: 1em;
                 color: rgba(0, 0, 0, 0.3);
                 letter-spacing: 0;
                 .sidebar-item {
@@ -121,7 +121,7 @@ body {
         margin-top: 40px;
         width: 45%;
         font-family: 'Gotham Book';
-        font-size: 16px;
+        font-size: 1em;
         color: #303030;
         line-height: 24px;
         .open {
@@ -167,7 +167,7 @@ body {
             h1 {
                 font-family: 'Gotham Book';
                 text-transform: uppercase;
-                font-size: 16px;
+                font-size: 1em;
                 color: #20BB87;
                 letter-spacing: 0.11px;
             }
