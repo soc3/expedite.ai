@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^helpdesk/', include('helpdesk.urls'))
+    url(r'^helpdesk/', include('helpdesk.urls')),
+    url(r'^facebook/', include('facebook.urls'))
 ]

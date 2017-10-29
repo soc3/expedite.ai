@@ -2,27 +2,51 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 
 
-from helpdesk.models import Issue, Reply, Order, ISSUE_STATUSES
+from helpdesk.models import Issue, Reply, Order, ISSUE_STATUSES, ISSUE_CATEGORIES
 # Create your views here.
 
 
-def get_issues_by_category(request):
-    return render(request, 'index.html')
+def index(request):
+    return get_issues_by_category(request)
+
+
+def get_default_context(request):
     try:
-        issues = Issue.objects.filter(category=request.GET['q'])
+        q = request.GET['q']
     except KeyError:
-        return JsonResponse({'message': 'query value not provided'}, status=400)
-    else:
-        return JsonResponse([each.to_json() for each in issues], safe=False)
+        q = 'where is my order'
+
+    category_count = {each: Issue.objects.filter(category=each).count()
+                        for each in ISSUE_CATEGORIES}
+    context = {
+        'issue_categories': category_count,
+        'active_category': q,
+    }
+    return context
+
+
+def get_issues_by_category(request):
+    try:
+        q = request.GET['q']
+    except KeyError:
+        q = 'where is my order'
+
+    issues = Issue.objects.filter(category=q)
+    context = get_default_context(request)
+    context['issues'] = issues
+    return render(request, 'index.html', context)
 
 
 def get_issues_by_status(request):
     try:
-        issues = Issue.objects.filter(status=request.GET['q'])
+        q = request.GET['q']
     except KeyError:
-        return JsonResponse({'message': 'query value not provided'}, status=400)
-    else:
-        return JsonResponse([each.to_json() for each in issues], safe=False)
+        q = 1
+
+    issues = Issue.objects.filter(status=q)
+    context = get_default_context(request)
+    context['issues'] = issues
+    return render(request, 'index.html', context)
 
 
 def resolve_issue(request):
